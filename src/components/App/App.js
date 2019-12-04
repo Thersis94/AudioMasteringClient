@@ -30,6 +30,7 @@ class App extends Component {
           <Switch>
             <PublicOnlyRoute path={"/login"} component={LoginPage} />
             <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
+            
           </Switch>
         </main>
 

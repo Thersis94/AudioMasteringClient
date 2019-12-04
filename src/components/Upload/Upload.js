@@ -66,7 +66,7 @@ class Upload extends Component {
   sendRequest(file) {
     return new Promise((resolve, reject) => {
       const req = new XMLHttpRequest();
-
+      
       req.upload.addEventListener("progress", event => {
         if (event.lengthComputable) {
           const copy = { ...this.state.uploadProgress };
@@ -92,13 +92,23 @@ class Upload extends Component {
         reject(req.response);
       });
 
-      const userName = window.localStorage.currentUser
+      const params = {
+        userName: window.localStorage.currentUser
+      }
 
       const formData = new FormData();
       formData.append("file", file, (file.fileState + '-' + file.name));
-      formData.append("userName", userName)
+      formData.append("userName", JSON.stringify(params))
+
+
+
+      for (var data of formData) {
+        //data[1].file.user = window.localStorage.currentUser
+        console.log(data)
+      }
 
       req.open("POST", "http://localhost:8000/api/audio-master");
+      req.setRequestHeader("userName", params.userName)
       req.send(formData);
     });
   }
@@ -106,7 +116,9 @@ class Upload extends Component {
   async uploadFiles() {
     this.setState({ uploadProgress: {}, uploading: true });
     const promises = [];
+    
     this.state.files.forEach(file => {
+      file.user = window.localStorage.currentUser
       promises.push(this.sendRequest(file));
     });
     try {
