@@ -6,7 +6,7 @@
 }
 
 .Header h1 {
-  margin: 0;
+  margin: 1vw;
 }
 
 .Header a {
@@ -67,8 +67,4 @@
   .Header__tagline--narrow {
     display: inherit;
   }
-}
-
-.PageName {
-
 }

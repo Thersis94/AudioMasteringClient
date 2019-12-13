@@ -40,18 +40,15 @@ export default class Header extends Component {
     return <>
       <nav className='Header'>
         <h1>
-          <Link className='PageName' to='/'>
+          <Link className='PageName' to='/home'>
             {' '}
             AI Audio
           </Link>
         </h1>
-        <span className='Header__tagline--wide'>Master with machines!</span>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
       </nav>
-
-      <span className='Header__tagline--narrow'>Master with machines!</span>
     </>
   }
 }
