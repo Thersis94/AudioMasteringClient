@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Dropzone from "../Dropzone/Dropzone";
 import Progress from "../Progress/Progress";
 import "./Upload.css";
+import { Link } from "react-router-dom"
 
 class Upload extends Component {
   constructor(props) {
@@ -14,7 +15,6 @@ class Upload extends Component {
     };
 
     this.onTargetAdded = this.onTargetAdded.bind(this);
-    this.onRawAdded = this.onRawAdded.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
     this.renderActions = this.renderActions.bind(this);
@@ -44,6 +44,7 @@ class Upload extends Component {
     if (this.state.successfullUploaded) {
       return (
         <button
+        className="button"
           onClick={() =>
             this.setState({ files: [], successfullUploaded: false })
           }
@@ -54,6 +55,7 @@ class Upload extends Component {
     } else {
       return (
         <button
+        className="button"
           disabled={this.state.files.length < 0 || this.state.uploading}
           onClick={this.uploadFiles}
         >
@@ -66,7 +68,7 @@ class Upload extends Component {
   sendRequest(file) {
     return new Promise((resolve, reject) => {
       const req = new XMLHttpRequest();
-      
+
       req.upload.addEventListener("progress", event => {
         if (event.lengthComputable) {
           const copy = { ...this.state.uploadProgress };
@@ -94,21 +96,19 @@ class Upload extends Component {
 
       const params = {
         userName: window.localStorage.currentUser
-      }
+      };
 
       const formData = new FormData();
-      formData.append("file", file, (file.fileState + '-' + file.name));
-      formData.append("userName", JSON.stringify(params))
-
-
+      formData.append("file", file, file.fileState + "-" + file.name);
+      formData.append("userName", JSON.stringify(params));
 
       for (var data of formData) {
         //data[1].file.user = window.localStorage.currentUser
-        console.log(data)
+        console.log(data);
       }
 
       req.open("POST", "http://localhost:8000/api/audio-master");
-      req.setRequestHeader("userName", params.userName)
+      req.setRequestHeader("userName", params.userName);
       req.send(formData);
     });
   }
@@ -116,9 +116,9 @@ class Upload extends Component {
   async uploadFiles() {
     this.setState({ uploadProgress: {}, uploading: true });
     const promises = [];
-    
+
     this.state.files.forEach(file => {
-      file.user = window.localStorage.currentUser
+      file.user = window.localStorage.currentUser;
       promises.push(this.sendRequest(file));
     });
     try {
@@ -132,16 +132,8 @@ class Upload extends Component {
   }
 
   onTargetAdded(files) {
-    files[0].fileState = "Target";
-
-    this.setState(prevState => ({
-      files: prevState.files.concat(files)
-    }));
-  }
-
-  onRawAdded(files) {
     files[0].fileState = "Raw";
-    
+
     this.setState(prevState => ({
       files: prevState.files.concat(files)
     }));
@@ -150,17 +142,11 @@ class Upload extends Component {
   render() {
     return (
       <div className="Upload">
-        <span className="Title">Upload Files</span>
+        <Link to="/" style={{ textDecoration: 'none' }} className="button">Home</Link>
         <div className="Content">
-          <div>
-            <header className='dropzone-header'>Target</header>
+          <div className='Dropzone-div'>
             <Dropzone
               onFilesAdded={this.onTargetAdded}
-              disabled={this.state.uploading || this.state.successfullUploaded}
-            />
-            <header className='dropzone-header'>Raw</header>
-            <Dropzone
-              onFilesAdded={this.onRawAdded}
               disabled={this.state.uploading || this.state.successfullUploaded}
             />
           </div>
@@ -168,7 +154,9 @@ class Upload extends Component {
             {this.state.files.map(file => {
               return (
                 <div key={file.name} className="Row">
-                  <span className="Filename">{file.name + " " + file.fileState}</span>
+                  <span className="Filename">
+                    {file.name + " " + file.fileState}
+                  </span>
                   {this.renderProgress(file)}
                 </div>
               );

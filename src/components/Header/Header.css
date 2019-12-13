@@ -43,6 +43,7 @@
 }
 
 .Header__logged-in a {
+  display: flex;
   border: 1px solid rgba(0, 0, 0, 0.25);
   padding: 5px 15px;
   border-radius: 15px;
@@ -66,4 +67,8 @@
   .Header__tagline--narrow {
     display: inherit;
   }
+}
+
+.PageName {
+
 }

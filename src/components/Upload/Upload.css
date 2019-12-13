@@ -9,7 +9,7 @@
   
   .Content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-top: 16px;
     box-sizing: border-box;
     width: 100%;
@@ -66,12 +66,13 @@
     align-items: center;
   }
 
-  button {
+  .button {
     font-family: 'Roboto medium', sans-serif;
     font-size: 14px;
     display: inline-block;
     height: 36px;
     min-width: 88px;
+    margin: 5vw;
     padding: 6px 16px;
     line-height: 1.42857143;
     text-align: center;
@@ -99,4 +100,9 @@
   .dropzone-header {
     text-align: center;
     padding: 1vh;
+  }
+
+  .Dropzone-div {
+    display: flex;
+    justify-content: center;
   }

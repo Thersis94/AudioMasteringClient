@@ -8,6 +8,7 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import "./App.css";
 import Upload from "../Upload/Upload";
 import Header from "../Header/Header";
+import userPage from "../userPage/userPage"
 
 class App extends Component {
   state = { hasError: false };
@@ -30,13 +31,12 @@ class App extends Component {
           <Switch>
             <PublicOnlyRoute path={"/login"} component={LoginPage} />
             <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
-            
+            <PrivateRoute exact path={"/"} component={userPage} />
+            <PrivateRoute path={"/upload"} component={Upload} />
           </Switch>
         </main>
 
-        <div className="Card">
-          <Upload />
-        </div>
+
       </div>
     );
   }

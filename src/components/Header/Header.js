@@ -12,6 +12,7 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className='Header__logged-in'>
+        {window.localStorage.currentUser}
         <Link
           onClick={this.handleLogoutClick}
           to='/'>
@@ -40,8 +41,7 @@ export default class Header extends Component {
     return <>
       <nav className='Header'>
         <h1>
-          <Link to='/'>
-            <FontAwesomeIcon className='blue' icon='gift' />
+          <Link className='PageName' to='/'>
             {' '}
             AI Audio
           </Link>

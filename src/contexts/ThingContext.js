@@ -10,11 +10,12 @@ const ThingContext = React.createContext({
   reviews: [],
   error: null,
   setError: () => {},
-  clearError: () => { },
-  setThing: () => {},
+  clearError: () => {},
+  setTrack: () => {},
   clearThing: () => {},
   setReviews: () => {},
   addReview: () => {},
+
 })
 
 export default ThingContext
@@ -34,8 +35,8 @@ export class ThingProvider extends Component {
     this.setState({ error: null })
   }
 
-  setThing = thing => {
-    this.setState({ thing })
+  setTrack = track => {
+    this.setState({ track })
   }
 
   setReviews = reviews => {
@@ -61,7 +62,7 @@ export class ThingProvider extends Component {
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
-      setThing: this.setThing,
+      setTrack: this.setTrack,
       setReviews: this.setReviews,
       clearThing: this.clearThing,
       addReview: this.addReview,

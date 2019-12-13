@@ -1,11 +1,12 @@
 import config from '../config'
-import TokenService from '../services/token-service'
+import TokenService from './token-service'
 
-const ThingApiService = {
-  getThings() {
-    return fetch(`${config.API_ENDPOINT}/things`, {
+const TracksApiService = {
+  getTracks() {
+    return fetch(`${config.API_ENDPOINT}/audio-master`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'userName': window.localStorage.currentUser
       },
     })
       .then(res =>
@@ -59,4 +60,4 @@ const ThingApiService = {
   }
 }
 
-export default ThingApiService
+export default TracksApiService
