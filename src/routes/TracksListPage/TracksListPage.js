@@ -3,7 +3,7 @@ import ThingListContext from '../../contexts/ThingListContext'
 import TracksApiService from '../../services/thing-api-service'
 import { Section } from '../../components/Utils/Utils'
 import TrackListItem from '../../components/ThingListItem/ThingListItem'
-import './ThingListPage.css'
+import './TracksListPage.css'
 
 export default class TracksListPage extends Component {
   static contextType = ThingListContext
