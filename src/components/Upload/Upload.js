@@ -3,6 +3,7 @@ import Dropzone from "../Dropzone/Dropzone";
 import Progress from "../Progress/Progress";
 import "./Upload.css";
 import { Link } from "react-router-dom"
+import Config from "../../config"
 
 class Upload extends Component {
   constructor(props) {
@@ -107,7 +108,7 @@ class Upload extends Component {
         console.log(data);
       }
 
-      req.open("POST", "http://localhost:8000/api/audio-master");
+      req.open("POST", `${Config.API_ENDPOINT}/audio-master`);
       req.setRequestHeader("userName", params.userName);
       req.send(formData);
     });

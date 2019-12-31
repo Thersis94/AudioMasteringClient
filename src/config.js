@@ -1,4 +1,4 @@
 export default {
-  API_ENDPOINT: 'http://localhost:8000/api',
+  API_ENDPOINT: 'https://7740530e.ngrok.io/api',
   TOKEN_KEY: 'thingful-client-auth-token',
 }
