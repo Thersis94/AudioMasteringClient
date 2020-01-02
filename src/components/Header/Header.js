@@ -36,19 +36,26 @@ export default class Header extends Component {
     )
   }
 
-  render() {
-    return <>
-      <nav className='Header'>
-        <h1>
-          <Link className='PageName' to='/home'>
-            {' '}
-            AI Audio
-          </Link>
-        </h1>
-        {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
-      </nav>
-    </>
+  renderBackgroundImg() {
+    if (window.location.href === 'https://4soxf.codesandbox.io/home') {
+      return 
   }
+}
+
+render() {
+  return <>
+    <nav styles={{ backgroundImage:`url(${this.renderBackgroundImg()})`}} className='Header'>
+      <h1>
+        <Link className='PageName' to='/home'>
+          {' '}
+          AI Audio
+            {this.renderBackgroundImg()}
+        </Link>
+      </h1>
+      {TokenService.hasAuthToken()
+        ? this.renderLogoutLink()
+        : this.renderLoginLink()}
+    </nav>
+  </>
+}
 }
