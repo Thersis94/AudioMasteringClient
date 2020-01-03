@@ -1,0 +1,39 @@
+.home-page-app-description {
+    color: white;
+    margin: 3vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.heatmap-img {
+    align-self: center;
+    width: 90%;
+}
+
+.mastering-explanation {
+    color: white;
+    text-align: left;
+    margin: 3vw 4vw 3vw 4vw;
+}
+
+.home-page-title {
+    color: white;
+    margin: 3vw
+}
+
+.file-types-lists {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: left;
+}
+
+.file-type-header {
+    color: white;
+    text-align: center;
+}
+.file-types-header {
+    color: white;
+}
+

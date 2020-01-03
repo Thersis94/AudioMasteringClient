@@ -43,7 +43,6 @@ export default class Header extends Component {
         <nav className={`${this.renderBackgroundImg()}`}>
           <h1>
             <Link className="PageName" to="/home">
-              {" "}
               AI Audio
             </Link>
           </h1>
