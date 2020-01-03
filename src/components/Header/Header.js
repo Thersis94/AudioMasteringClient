@@ -1,61 +1,59 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import TokenService from '../../services/token-service'
-import './Header.css'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import TokenService from "../../services/token-service";
+import "./Header.css";
 
 export default class Header extends Component {
   handleLogoutClick = () => {
-    TokenService.clearAuthToken()
-  }
+    TokenService.clearAuthToken();
+  };
 
   renderLogoutLink() {
     return (
-      <div className='Header__logged-in'>
+      <div className="Header__logged-in">
         {window.localStorage.currentUser}
-        <Link
-          onClick={this.handleLogoutClick}
-          to='/'>
+        <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
       </div>
-    )
+    );
   }
 
   renderLoginLink() {
     return (
-      <div className='Header__not-logged-in'>
-        <Link
-          to='/login'>
+      <div className="Header__not-logged-in">
+        <Link className="login-button" to="/login">
           Log in
         </Link>
-        <Link
-          to='/register'>
-          Register
-        </Link>
+        <Link to="/register">Register</Link>
       </div>
-    )
+    );
   }
 
   renderBackgroundImg() {
-    if (window.location.href === 'https://4soxf.codesandbox.io/home') {
-      return 
+    if (window.location.href === "http://localhost:3000/home") {
+      //replace with hosing page url
+      return "HomePage";
+    } else return "Header";
   }
-}
 
-render() {
-  return <>
-    <nav styles={{ backgroundImage:`url(${this.renderBackgroundImg()})`}} className='Header'>
-      <h1>
-        <Link className='PageName' to='/home'>
-          {' '}
-          AI Audio
-            {this.renderBackgroundImg()}
-        </Link>
-      </h1>
-      {TokenService.hasAuthToken()
-        ? this.renderLogoutLink()
-        : this.renderLoginLink()}
-    </nav>
-  </>
-}
+  render() {
+    return (
+      <>
+        <nav className={`${this.renderBackgroundImg()}`}>
+          <h1>
+            <Link className="PageName" to="/home">
+              {" "}
+              AI Audio
+            </Link>
+          </h1>
+          <div className="login-register-buttons">
+            {TokenService.hasAuthToken()
+              ? this.renderLogoutLink()
+              : this.renderLoginLink()}
+          </div>
+        </nav>
+      </>
+    );
+  }
 }

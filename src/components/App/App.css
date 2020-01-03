@@ -1,16 +1,10 @@
 .App {
   text-align: center;
-  background-color: #b3c5d7;
+  background-color: #0E121E;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
-}
-
-
-.App__header {
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .App__main {

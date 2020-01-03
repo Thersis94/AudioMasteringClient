@@ -32,7 +32,7 @@ class userPage extends Component {
   }
 
   downloadTrack = ev => {
-    //ev.prventDefault();
+    console.time('download')
     const trackName = ev.target.value;
     fetch(`${config.API_ENDPOINT}/audio-master/download`, {
       headers: {
@@ -41,14 +41,18 @@ class userPage extends Component {
       }
     })
       .then(function(res) {
+        console.timeLog('first then')
         return res.blob();
       })
       .then(blob => {
+        console.timeLog('second then')
         let url = window.URL.createObjectURL(blob);
         let a = document.createElement("a");
+        console.timeLog('creating window URL')
         a.href = url;
         a.download = trackName;
         a.click();
+        console.timeEnd('returning blob')
       })
       .catch(err => console.error(err));
   };
