@@ -10,3 +10,11 @@
 .login-register-header {
   color: white;
 }
+
+.build-info {
+  color: white;
+  font-size: 5vw;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

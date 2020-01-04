@@ -3,6 +3,16 @@
   flex-direction: column;
 }
 
+.track-span {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: solid black 2px;
+  background-color: white;
+  width: 90%;
+  border-radius: 4px;
+}
+
 .button {
     font-family: 'Roboto medium', sans-serif;
     font-size: 3vw;
@@ -23,16 +33,63 @@
     -ms-user-select: none;
     user-select: none;
     border: 0;
-    border-radius: 2px;
     background: rgba(103, 58, 183, 1);
     color: #fff;
     outline: 0;
+  }
+
+  .download-button {
+    font-family: 'Roboto medium', sans-serif;
+    font-size: 4vw;
+    display: inline-block;
+    height: 10vw;
+    min-width: 88px;
+    padding: 6px 16px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border: 0;
+    background: rgba(103, 58, 183, 1);
+    color: #fff;
+    outline: 0;
+    border-radius: 0;
   }
 
   .delete-button {
     font-family: 'Roboto medium', sans-serif;
     font-size: 3vw;
     height: 8vw;
+    min-width: 88px;
+    width: 50%;
+    padding: 6px 16px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 0;
+    background: rgba(103, 58, 183, 1);
+    color: #fff;
+    outline: 0;
+    border-radius: 0;
+  }
+
+  .edit-button {
+    font-family: 'Roboto medium', sans-serif;
+    font-size: 3vw;
+    height: 8vw;
+    width: 50%;
     min-width: 88px;
     padding: 6px 16px;
     line-height: 1.42857143;
@@ -47,8 +104,8 @@
     -ms-user-select: none;
     user-select: none;
     border: 0;
-    border-radius: 2px;
     background: rgba(103, 58, 183, 1);
     color: #fff;
     outline: 0;
+    border-radius: 0;
   }

@@ -38,8 +38,9 @@ class App extends Component {
             <PrivateRoute path={"/upload"} component={Upload} />
           </Switch>
         </main>
-
-
+        <div className='build-info'>
+          Dev Build 0.14
+        </div>
       </div>
     );
   }

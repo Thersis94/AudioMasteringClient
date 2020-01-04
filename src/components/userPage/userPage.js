@@ -85,13 +85,18 @@ class userPage extends Component {
   renderTracks() {
     const tracksList = this.state.tracks;
     return tracksList.map(track => (
-      <span key={track.id} track={track.name}>
-        <Button className="button" type="submit" value={track.name} onClick={this.downloadTrack}>
+      <span className='track-span' key={track.id} track={track.name}>
+        <Button className="download-button" type="submit" value={track.name} onClick={this.downloadTrack}>
           {track.name}
         </Button>
+        <span className="track-buttons-span" >
         <Button className="delete-button" type="delete" value={track.name} onClick={this.deleteTrack}>
           DELETE
         </Button>
+        <Button className="edit-button" type="edit" value={track.name}>
+          EDIT
+        </Button>
+        </span>
       </span>
     ));
   }
