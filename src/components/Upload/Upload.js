@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Dropzone from "../Dropzone/Dropzone";
 import Progress from "../Progress/Progress";
 import "./Upload.css";
-import { Link } from "react-router-dom"
-import Config from "../../config"
+import { Link } from "react-router-dom";
+import Config from "../../config";
+import TracksApiService from "../../services/tracks-api-service";
 
 class Upload extends Component {
   constructor(props) {
@@ -14,7 +15,6 @@ class Upload extends Component {
       uploadProgress: {},
       successfullUploaded: false
     };
-
     this.onTargetAdded = this.onTargetAdded.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
@@ -45,7 +45,7 @@ class Upload extends Component {
     if (this.state.successfullUploaded) {
       return (
         <button
-        className="button"
+          className="button"
           onClick={() =>
             this.setState({ files: [], successfullUploaded: false })
           }
@@ -56,7 +56,7 @@ class Upload extends Component {
     } else {
       return (
         <button
-        className="button"
+          className="button"
           disabled={this.state.files.length < 0 || this.state.uploading}
           onClick={this.uploadFiles}
         >
@@ -104,7 +104,6 @@ class Upload extends Component {
       formData.append("userName", JSON.stringify(params));
 
       for (var data of formData) {
-        //data[1].file.user = window.localStorage.currentUser
         console.log(data);
       }
 
@@ -127,7 +126,6 @@ class Upload extends Component {
 
       this.setState({ successfullUploaded: true, uploading: false });
     } catch (e) {
-      // Not Production ready! Do some error handling here instead...
       this.setState({ successfullUploaded: true, uploading: false });
     }
   }
@@ -143,9 +141,11 @@ class Upload extends Component {
   render() {
     return (
       <div className="Upload">
-        <Link to="/" style={{ textDecoration: 'none' }} className="button">Home</Link>
+        <Link to="/" style={{ textDecoration: "none" }} className="button">
+          Home
+        </Link>
         <div className="Content">
-          <div className='Dropzone-div'>
+          <div className="Dropzone-div">
             <Dropzone
               onFilesAdded={this.onTargetAdded}
               disabled={this.state.uploading || this.state.successfullUploaded}

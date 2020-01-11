@@ -11,6 +11,7 @@ import userPage from "../userPage/userPage";
 import InfoPage from "../InfoPage/InfoPage";
 import HomePage from "../HomePage/HomePage";
 
+
 class App extends Component {
   state = { hasError: false };
 

@@ -2,7 +2,8 @@ import React, { Component } from "../../../node_modules/react";
 import { Link } from "../../../node_modules/react-router-dom";
 import config from "../../config";
 import { Button, Input, Required } from "../Utils/Utils";
-import './userPage.css'
+import "./userPage.css";
+import TracksApiService from "../../services/tracks-api-service";
 
 class userPage extends Component {
   constructor() {
@@ -14,47 +15,22 @@ class userPage extends Component {
 
   componentDidMount() {
     const currentUser = window.localStorage.currentUser;
-    fetch(`${config.API_ENDPOINT}/audio-master`, {
-      headers: {
-        userName: window.localStorage.currentUser
-      }
-    })
-      .then(res => res.json())
-      .then(data => {
-        data.map(track => {
-          const tracks = this.state.tracks;
-          tracks.push(track);
-          this.setState({
-            tracks: tracks
-          });
+    TracksApiService.getTracks(currentUser).then(data => {
+      data.map(track => {
+        const tracks = this.state.tracks;
+        tracks.push(track);
+        this.setState({
+          tracks: tracks
         });
       });
+    });
   }
 
   downloadTrack = ev => {
-    console.time('download')
+    console.time("download");
     const trackName = ev.target.value;
-    fetch(`${config.API_ENDPOINT}/audio-master/download`, {
-      headers: {
-        userName: window.localStorage.currentUser,
-        trackName: trackName
-      }
-    })
-      .then(function(res) {
-        console.timeLog('first then')
-        return res.blob();
-      })
-      .then(blob => {
-        console.timeLog('second then')
-        let url = window.URL.createObjectURL(blob);
-        let a = document.createElement("a");
-        console.timeLog('creating window URL')
-        a.href = url;
-        a.download = trackName;
-        a.click();
-        console.timeEnd('returning blob')
-      })
-      .catch(err => console.error(err));
+    const currentUser = window.localStorage.currentUser;
+    TracksApiService.downloadTrack(trackName, currentUser);
   };
 
   deleteTrack = ev => {
@@ -72,11 +48,7 @@ class userPage extends Component {
         trackList.splice(i, 1);
       }
     }
-    fetch(`${config.API_ENDPOINT}/audio-master`, requestOptions)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-      });
+    TracksApiService.deleteTrack(requestOptions);
     this.setState({
       tracks: trackList
     });
@@ -85,17 +57,27 @@ class userPage extends Component {
   renderTracks() {
     const tracksList = this.state.tracks;
     return tracksList.map(track => (
-      <span className='track-span' key={track.id} track={track.name}>
-        <Button className="download-button" type="submit" value={track.name} onClick={this.downloadTrack}>
+      <span className="track-span" key={track.id} track={track.name}>
+        <Button
+          className="download-button"
+          type="submit"
+          value={track.name}
+          onClick={this.downloadTrack}
+        >
           {track.name}
         </Button>
-        <span className="track-buttons-span" >
-        <Button className="delete-button" type="delete" value={track.name} onClick={this.deleteTrack}>
-          DELETE
-        </Button>
-        <Button className="edit-button" type="edit" value={track.name}>
-          EDIT
-        </Button>
+        <span className="track-buttons-span">
+          <Button
+            className="delete-button"
+            type="delete"
+            value={track.name}
+            onClick={this.deleteTrack}
+          >
+            DELETE
+          </Button>
+          <Button className="edit-button" type="edit" value={track.name}>
+            RENAME
+          </Button>
         </span>
       </span>
     ));

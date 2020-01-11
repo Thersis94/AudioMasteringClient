@@ -2,18 +2,40 @@ import config from '../config'
 import TokenService from './token-service'
 
 const TracksApiService = {
-  getTracks() {
+  getTracks(currentUser) {
     return fetch(`${config.API_ENDPOINT}/audio-master`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-        'userName': window.localStorage.currentUser
-      },
+        userName: currentUser
+      }
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+      .then(res => res.json())
+  },
+  downloadTrack(trackName, currentUser) {
+   return fetch(`${config.API_ENDPOINT}/audio-master/download`, {
+      headers: {
+        userName: currentUser,
+        trackName: trackName
+      }
+    })
+    .then(function(res) {
+      console.log(window.fetch)
+      return res.blob();
+    })
+    .then(blob => {
+      let url = window.URL.createObjectURL(blob);
+      let a = document.createElement("a");
+      a.href = url;
+      a.download = trackName;
+      a.click();
+    })
+    .catch(err => console.error(err));
+  },
+  deleteTrack(requestOptions) {
+    return fetch(`${config.API_ENDPOINT}/audio-master`, requestOptions)
+    .then(res => res.json())
+    .then(res => {
+      console.log(res);
+    });
   },
   getThing(thingId) {
     return fetch(`${config.API_ENDPOINT}/things/${thingId}`, {

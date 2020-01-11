@@ -52,6 +52,7 @@
   border: 2px solid black(255, 255, 255, 0.25);
   padding: 5px 15px;
   border-radius: 15px;
+  text-align: center;
 }
 
 .HomePage {
@@ -84,6 +85,7 @@ h1 {
 .user-name {
   color: white;
 }
+
 
 @media screen and (min-width: 450px) {
   .Header {
