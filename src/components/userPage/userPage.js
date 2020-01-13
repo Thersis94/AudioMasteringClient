@@ -1,17 +1,21 @@
 import React, { Component } from "../../../node_modules/react";
 import { Link } from "../../../node_modules/react-router-dom";
-//import config from "../../config";
+import config from "../../config";
 import { Button } from "../Utils/Utils";
 import "./userPage.css";
 import TracksApiService from "../../services/tracks-api-service";
-
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner'
 
 class userPage extends Component {
   constructor() {
     super();
     this.state = {
-      tracks: []
+      tracks: [],
+      downloading: false
     };
+    this.downloadTrack = this.downloadTrack.bind(this)
+    this.setDownloadingState = this.setDownloadingState.bind(this)
   }
 
   componentDidMount() {
@@ -27,10 +31,33 @@ class userPage extends Component {
     });
   }
 
-  downloadTrack = ev => {
+  downloadTrack(ev) {
     const trackName = ev.target.value;
     const currentUser = window.localStorage.currentUser;
-    TracksApiService.downloadTrack(trackName, currentUser);
+    return fetch(`${config.API_ENDPOINT}/audio-master/download`, {
+      headers: {
+        userName: currentUser,
+        trackName: trackName
+      }
+    })
+      .then(res => {
+        this.setState({
+          downloading: true
+        })
+        return res.blob();
+      })
+      .then(blob => {
+        this.setState({
+          downloading: false
+        })
+        console.log(this.state.downloading)
+        let url = window.URL.createObjectURL(blob);
+        let a = document.createElement("a");
+        a.href = url;
+        a.download = trackName;
+        a.click();
+      })
+      .catch(err => console.error(err));
   };
 
   deleteTrack = ev => {
@@ -54,21 +81,26 @@ class userPage extends Component {
     });
   };
 
+  setDownloadingState() {
+    if(this.state.downloading) {
+      return'downloading'
+    }
+    else
+      return'not-downloading'
+  }
+
   renderTracks() {
     const tracksList = this.state.tracks;
     return tracksList.map(track => (
       <span className="track-span" key={track.id} track={track.name}>
-        {/* <Button
-          className="download-button"
-          type="submit"
-          value={track.name}
-          onClick={this.downloadTrack}
-        >
-          {track.name}
-        </Button> */}
         <h3 className="track-name">{track.name}</h3>
         <span className="track-buttons-span">
-        <Button className="download-button" type="edit" value={track.name} onClick={this.downloadTrack}>
+          <Button
+            className="download-button"
+            type="edit"
+            value={track.name}
+            onClick={this.downloadTrack}
+          >
             DOWNLOAD
           </Button>
           <Button
@@ -79,7 +111,6 @@ class userPage extends Component {
           >
             DELETE
           </Button>
-          
         </span>
       </span>
     ));
@@ -88,6 +119,10 @@ class userPage extends Component {
   render() {
     return (
       <div className="user-page-wrap">
+        <span className={`${this.setDownloadingState()}`}>
+        <Loader type="Audio" color="white" height={100} width={100} />
+        <h2 className='downloading-message'>Please wait while we get your file ready for you. This could take a minute so grab a cup of tea...</h2>
+        </span>
         <Link
           to="/upload"
           style={{ textDecoration: "none" }}

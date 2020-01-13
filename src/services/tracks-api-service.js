@@ -9,25 +9,6 @@ const TracksApiService = {
       }
     }).then(res => res.json());
   },
-  downloadTrack(trackName, currentUser) {
-     return fetch(`${config.API_ENDPOINT}/audio-master/download`, {
-        headers: {
-          userName: currentUser,
-          trackName: trackName
-        }
-      })
-      .then(function(res) {
-        return res.blob();
-      })
-      .then(blob => {
-        let url = window.URL.createObjectURL(blob);
-        let a = document.createElement("a");
-        a.href = url;
-        a.download = trackName;
-        a.click();
-      })
-      .catch(err => console.error(err));
-  },
   deleteTrack(requestOptions) {
     return fetch(`${config.API_ENDPOINT}/audio-master`, requestOptions)
       .then(res => res.json())

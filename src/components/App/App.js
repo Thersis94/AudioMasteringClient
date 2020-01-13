@@ -40,7 +40,7 @@ class App extends Component {
           </Switch>
         </main>
         <div className='build-info'>
-          Dev Build 0.14
+          Dev Build 0.15
         </div>
       </div>
     );
