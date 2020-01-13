@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./InfoPage.css";
 
 export default class HomePage extends Component {
@@ -10,7 +9,7 @@ export default class HomePage extends Component {
         <img
           className="heatmap-img"
           src="https://raw.githubusercontent.com/Thersis94/AudioMasteringClient/master/Pictures/image_3KCWKFSBPZC55YAEK4TUGEW3JPZNOH7K.png"
-          alt="Picture demonstrating a heatmap."
+          alt="Demonstrating a heatmap."
         />
         <p className="mastering-explanation">
           When you upload a audio file a heatmap is created. The heatmap is a

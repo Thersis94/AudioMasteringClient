@@ -18,7 +18,7 @@
     font-family: 'Roboto medium', sans-serif;
     font-size: 3vw;
     display: inline-block;
-    height: 8vw;
+    height: 2em;
     min-width: 88px;
     margin: 5vw;
     padding: 6px 16px;
@@ -39,20 +39,20 @@
     outline: 0;
   }
 
-  .download-button {
+  .track-name {
+    margin: 0;
     font-family: 'Roboto medium', sans-serif;
     font-size: 4vw;
     display: inline-block;
-    height: 10vw;
+    height: 3em;
     min-width: 88px;
-    padding: 6px 16px;
+    padding: 1em 1.2em;
     line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
-    cursor: pointer;
     user-select: none;
     border: 0;
     background: rgba(103, 58, 183, 1);
@@ -86,7 +86,7 @@
     border-radius: 0;
   }
 
-  .edit-button {
+  .download-button {
     font-family: 'Roboto medium', sans-serif;
     font-size: 3vw;
     height: 8vw;
@@ -109,4 +109,22 @@
     color: #fff;
     outline: 0;
     border-radius: 0;
+  }
+
+  .download-button:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+    border: solid black 2px;
+  }
+
+  .delete-button:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+    border: solid black 2px;
+  }
+
+  .button:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+    border: solid black 2px;
   }

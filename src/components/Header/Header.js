@@ -27,7 +27,7 @@ export default class Header extends Component {
         <Link className="login-button" to="/login">
           Log in
         </Link>
-        <Link to="/register">Register</Link>
+        <Link className='button' to="/register">Register</Link>
       </div>
     );
   }

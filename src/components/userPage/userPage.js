@@ -1,9 +1,10 @@
 import React, { Component } from "../../../node_modules/react";
 import { Link } from "../../../node_modules/react-router-dom";
-import config from "../../config";
-import { Button, Input, Required } from "../Utils/Utils";
+//import config from "../../config";
+import { Button } from "../Utils/Utils";
 import "./userPage.css";
 import TracksApiService from "../../services/tracks-api-service";
+
 
 class userPage extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class userPage extends Component {
       data.map(track => {
         const tracks = this.state.tracks;
         tracks.push(track);
-        this.setState({
+        return this.setState({
           tracks: tracks
         });
       });
@@ -27,7 +28,6 @@ class userPage extends Component {
   }
 
   downloadTrack = ev => {
-    console.time("download");
     const trackName = ev.target.value;
     const currentUser = window.localStorage.currentUser;
     TracksApiService.downloadTrack(trackName, currentUser);
@@ -58,15 +58,19 @@ class userPage extends Component {
     const tracksList = this.state.tracks;
     return tracksList.map(track => (
       <span className="track-span" key={track.id} track={track.name}>
-        <Button
+        {/* <Button
           className="download-button"
           type="submit"
           value={track.name}
           onClick={this.downloadTrack}
         >
           {track.name}
-        </Button>
+        </Button> */}
+        <h3 className="track-name">{track.name}</h3>
         <span className="track-buttons-span">
+        <Button className="download-button" type="edit" value={track.name} onClick={this.downloadTrack}>
+            DOWNLOAD
+          </Button>
           <Button
             className="delete-button"
             type="delete"
@@ -75,9 +79,7 @@ class userPage extends Component {
           >
             DELETE
           </Button>
-          <Button className="edit-button" type="edit" value={track.name}>
-            RENAME
-          </Button>
+          
         </span>
       </span>
     ));
