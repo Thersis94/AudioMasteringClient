@@ -4,7 +4,7 @@
 }
 
 .track-span {
-  margin: auto;
+  margin: .5em auto .5em auto;
   display: flex;
   flex-direction: column;
   border: solid black 2px;
@@ -16,11 +16,11 @@
 
 .button {
     font-family: 'Roboto medium', sans-serif;
-    font-size: 3vw;
+    font-size: 1.5em;
     display: inline-block;
     height: 2em;
     min-width: 88px;
-    margin: 5vw;
+    margin: 1.5em;
     padding: 6px 16px;
     line-height: 1.42857143;
     text-align: center;
@@ -158,4 +158,35 @@
 
 .not-downloading {
   display: none;
+}
+
+
+@media screen and (min-width: 450px) {
+  .user-page-wrap {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .tracks-wrapper {
+    margin: 0 auto 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .track-span {
+    width: auto;
+  }
+  .track-name {
+    font-size: 1em;
+  }
+  .download-button {
+    font-size: 1em;
+    height: 3em;
+  }
+  .delete-button {
+    font-size: 1em;
+    height: 3em;
+  }
 }

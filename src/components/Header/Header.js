@@ -36,7 +36,8 @@ export default class Header extends Component {
     if (window.location.href === "http://localhost:3000/home") {
       //replace with hosing page url
       return "HomePage";
-    } else return "Header";
+    }
+    else return "Header";
   }
 
   render() {

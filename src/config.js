@@ -1,4 +1,4 @@
 export default {
-  API_ENDPOINT: 'https://7740530e.ngrok.io/api',
+  API_ENDPOINT: 'https://masteringserver.ngrok.io/api',
   TOKEN_KEY: 'thingful-client-auth-token',
 }

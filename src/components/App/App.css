@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  background-image: url('https://raw.githubusercontent.com/Thersis94/AudioMasteringClient/master/Pictures/23230.jpg');
   background-color: #0E121E;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .login-register-header {
@@ -13,8 +17,22 @@
 
 .build-info {
   color: white;
-  font-size: 5vw;
+  font-size: 1em;
   position: fixed;
   bottom: 0;
   right: 0;
+}
+
+@media screen and (min-width: 450px) {
+  .login-register-header {
+    color: white;
+  }
+.LoginPage {
+  width: 50%;
+  margin: auto;
+}
+.RegistrationPage {
+  width: 50%;
+  margin: auto;
+}
 }

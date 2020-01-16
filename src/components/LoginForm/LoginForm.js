@@ -50,6 +50,7 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state;
     return (
+      <span className='login-registration' >
       <form className="Login-Registration-Form" onSubmit={this.handleSubmitJwtAuth}>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="user_name">
@@ -67,6 +68,7 @@ export default class LoginForm extends Component {
         </div>
         <Button className='button' type="submit">Login</Button>
       </form>
+      </span>
     );
   }
 }

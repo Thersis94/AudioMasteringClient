@@ -1,6 +1,8 @@
 .Dropzone {
-    height: 200px;
-    width: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    height: 20vw;
+    width: 20vw;
     background-color: #fff;
     border: 2px dashed rgb(187, 186, 186);
     border-radius: 50%;
@@ -23,4 +25,9 @@
 
   .Highlight {
     background-color: rgb(188, 185, 236);
+  }
+
+  .upload-instructions {
+    font-size: 1em;
+    text-align: center;
   }

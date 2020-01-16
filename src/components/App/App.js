@@ -33,14 +33,16 @@ class App extends Component {
           <Switch>
             <PublicOnlyRoute exact path={"/info"} component={InfoPage} />
             <PublicOnlyRoute exact path={"/home"} component={HomePage} />
+
             <PublicOnlyRoute path={"/login"} component={LoginPage} />
             <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
+
             <PrivateRoute exact path={"/"} component={userPage} />
             <PrivateRoute path={"/upload"} component={Upload} />
           </Switch>
         </main>
         <div className='build-info'>
-          Dev Build 0.15
+          Dev Build 0.16
         </div>
       </div>
     );

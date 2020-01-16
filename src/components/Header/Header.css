@@ -1,5 +1,5 @@
 .Header {
-  height: 20vw;
+  height: 6em;
   display: flex;
   align-items: normal;
   justify-content: space-between;
@@ -43,12 +43,14 @@
 }
 
 .Header__not-logged-in a:last-child {
+  height: 1.6em;
+  font-size: 1.2em;
   text-decoration: none;
   background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   padding: 5px 15px;
   border-radius: 15px;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
 }
 
 .Header__logged-in a {
