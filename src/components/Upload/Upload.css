@@ -106,3 +106,57 @@
     display: flex;
     justify-content: center;
   }
+
+  .demo-track-link {
+    font-family: 'Roboto medium', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    height: 36px;
+    min-width: 88px;
+    margin: auto 3vw auto auto;
+    padding: 6px 16px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 0;
+    border-radius: 2px;
+    background: rgba(103, 58, 183, 1);
+    color: #fff;
+    outline: 0;
+  }
+
+  .demo-track-link:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+    border: solid black 2px;
+  }
+
+  .home-download-demo-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+
+
+
+  @media screen and (max-width: 490px) {
+  .home-download-demo-link {
+    flex-direction: column;
+  }
+
+  .demo-track-link {
+    margin: auto;
+  }
+
+
+  }
