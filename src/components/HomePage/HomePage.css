@@ -1,0 +1,21 @@
+
+.attribution-section-header {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.attribution-header {
+    font-size: 1.2em;
+}
+
+.attribution-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: auto;
+}
+
+.attribution-text {
+    color: white;
+}

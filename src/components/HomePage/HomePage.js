@@ -49,6 +49,17 @@ export default class HomePage extends Component {
               </section>
             </span>
           </section>
+          <section>
+            <h3 className='attribution-section-header'>Attribution</h3>
+
+                <h4 className='attribution-header'>Teragonaudio</h4>
+                <p className='attribution-text'>Thanks to Teragon audio for supplying a open source command-line VST plugin host.</p>
+
+
+                <h4 className='attribution-header'>Backgrounds</h4>
+                <p className='attribution-text'>Backgrounds supplied by FreePik. www.freepik.com</p>
+
+          </section>
         </span>
       );
     }
