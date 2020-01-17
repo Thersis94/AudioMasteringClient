@@ -81,6 +81,7 @@ h1 {
 }
 
 .PageName {
+  font-size: 2em;
   text-decoration: none;
   color: white;
 } 

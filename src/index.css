@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:200, 400');
 @import url('https://fonts.googleapis.com/css?family=Lustria');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 
 * {
   box-sizing: border-box;
@@ -14,7 +15,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Lustria";
+  font-family: 'Abril Fatface', cursive;
   font-weight: 100;
   color: #222;
 }
