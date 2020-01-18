@@ -33,7 +33,7 @@ export default class Header extends Component {
   }
 
   renderBackgroundImg() {
-    if (window.location.href === "http://localhost:3000/home") {
+    if (window.location.href === "https://aiaudio.now.sh/home") {
       //replace with hosing page url
       return "HomePage";
     }

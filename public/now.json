@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "name": "AIAudio",
+    "alias": "Thersis-AI-Audio",
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/.*", "dest": "/index.html" }
+    ]
+  }

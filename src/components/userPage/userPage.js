@@ -50,7 +50,6 @@ class userPage extends Component {
         this.setState({
           downloading: false
         })
-        console.log(this.state.downloading)
         let url = window.URL.createObjectURL(blob);
         let a = document.createElement("a");
         a.href = url;

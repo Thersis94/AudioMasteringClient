@@ -1,7 +1,7 @@
 {
-  "name": "audio-mastering-client",
+  "name": "AIAudio",
   "version": "0.0.1",
-  "description": "Starter code for learning about authentication.",
+  "alias": "AIAudio",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -29,6 +29,7 @@
     ">0.2%",
     "not dead",
     "not ie <= 11",
+    
     "not op_mini all"
   ],
   "devDependencies": {

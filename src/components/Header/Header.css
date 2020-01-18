@@ -81,7 +81,6 @@ h1 {
 }
 
 .PageName {
-  font-size: 2em;
   text-decoration: none;
   color: white;
 } 
@@ -97,6 +96,10 @@ h1 {
 
 
 @media screen and (min-width: 450px) {
+  .PageName {
+    font-size: 2em;
+  }
+
   .Header {
     align-items: baseline;
   }
@@ -107,6 +110,10 @@ h1 {
 }
 
 @media screen and (max-width: 490px) {
+  .PageName {
+    font-size: 1em;
+  }
+
   .Header__tagline--wide {
     display: none;
   }

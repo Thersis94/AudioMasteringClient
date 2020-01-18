@@ -103,10 +103,6 @@ class Upload extends Component {
       formData.append("file", file, file.fileState + "-" + file.name);
       formData.append("userName", JSON.stringify(params));
 
-      for (var data of formData) {
-        console.log(data);
-      }
-
       req.open("POST", `${Config.API_ENDPOINT}/audio-master`);
       req.setRequestHeader("userName", params.userName);
       req.send(formData);
