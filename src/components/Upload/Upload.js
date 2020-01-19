@@ -128,21 +128,28 @@ class Upload extends Component {
 
   onTargetAdded(files) {
     files[0].fileState = "Raw";
-
+    files = [files[0]]
+    console.log(files)
     this.setState(prevState => ({
-      files: prevState.files.concat(files)
+      files: files
     }));
   }
+
 
   render() {
     return (
       <div className="Upload">
-        <div className='home-download-demo-link'>
-        <Link to="/" style={{ textDecoration: "none" }} className="button">
-          Home
-        </Link>
-        <a className='demo-track-link' href="http://sono-works.com/en/downloads" target="_blank">Downloadbale Demo Tracks</a>
-        
+        <div className="home-download-demo-link">
+          <Link to="/" style={{ textDecoration: "none" }} className="button">
+            Home
+          </Link>
+          <a
+            className="demo-track-link"
+            href="http://sono-works.com/en/downloads"
+            target="_blank"
+          >
+            Downloadbale Demo Tracks
+          </a>
         </div>
         <div className="Content">
           <div className="Dropzone-div">

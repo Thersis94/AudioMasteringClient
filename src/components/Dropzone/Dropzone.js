@@ -6,7 +6,6 @@ class Dropzone extends Component {
     super(props);
     this.state = { hightlight: false };
     this.fileInputRef = React.createRef();
-
     this.openFileDialog = this.openFileDialog.bind(this);
     this.onFilesAdded = this.onFilesAdded.bind(this);
     this.onDragOver = this.onDragOver.bind(this);
@@ -42,15 +41,14 @@ class Dropzone extends Component {
 
   onDrop(event) {
     event.preventDefault();
-
+    console.log(event)
     if (this.props.disabled) return;
-
     const files = event.dataTransfer.files;
     if (this.props.onFilesAdded) {
       const array = this.fileListToArray(files);
       this.props.onFilesAdded(array);
     }
-    this.setState({ hightlight: false });
+    this.setState({ hightlight: false });      
   }
 
   fileListToArray(list) {
@@ -75,7 +73,6 @@ class Dropzone extends Component {
           ref={this.fileInputRef}
           className="FileInput"
           type="file"
-          multiple
           onChange={this.onFilesAdded}
         />
         <img
@@ -83,7 +80,9 @@ class Dropzone extends Component {
           className="Icon"
           src="baseline-cloud_upload-24px.svg"
         />
-        <p className='upload-instructions'>Drag and drop or click for file explorer.</p>
+        <p className="upload-instructions">
+          Drag and drop or click for file explorer.
+        </p>
       </div>
     );
   }
