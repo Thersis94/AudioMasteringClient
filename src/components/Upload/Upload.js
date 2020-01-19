@@ -129,7 +129,6 @@ class Upload extends Component {
   onTargetAdded(files) {
     files[0].fileState = "Raw";
     files = [files[0]]
-    console.log(files)
     this.setState(prevState => ({
       files: files
     }));
@@ -147,6 +146,7 @@ class Upload extends Component {
             className="demo-track-link"
             href="http://sono-works.com/en/downloads"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Downloadbale Demo Tracks
           </a>

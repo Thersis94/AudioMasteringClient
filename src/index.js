@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
-import { ThingListProvider } from './contexts/ThingListContext'
-import { ThingProvider } from './contexts/ThingContext'
+import { ElementListProvider } from './contexts/ElementListContext'
+import { ElementProvider } from './contexts/AppContext'
 import App from './components/App/App'
 import './index.css'
 
@@ -12,11 +12,11 @@ import './index.css'
 
 ReactDOM.render(
   <BrowserRouter>
-    <ThingListProvider>
-      <ThingProvider>
+    <ElementListProvider>
+      <ElementProvider>
         <App />
-      </ThingProvider>
-    </ThingListProvider>
+      </ElementProvider>
+    </ElementListProvider>
   </BrowserRouter>,
   document.getElementById('root')
 )

@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-import ThingListContext from '../../contexts/ThingListContext'
-import TracksApiService from '../../services/thing-api-service'
+import ElementListContext from '../../contexts/ElementListContext'
+import TracksApiService from '../../services/tracks-api-service'
 import { Section } from '../../components/Utils/Utils'
-import TrackListItem from '../../components/ThingListItem/ThingListItem'
 import './TracksListPage.css'
 
 export default class TracksListPage extends Component {
-  static contextType = ThingListContext
+  static contextType = ElementListContext
 
   componentDidMount() {
     this.context.clearError()
     TracksApiService.getTracks()
-      .then(this.context.setThingList)
+      .then(this.context.setElementList)
       .catch(this.context.setError)
   }
 
@@ -28,10 +27,10 @@ export default class TracksListPage extends Component {
   render() {
     const { error } = this.context
     return (
-      <Section list className='ThingListPage'>
+      <Section list className='TrackListPage'>
         {error
           ? <p className='red'>There was an error, try again</p>
-          : this.renderThings()}
+          : this.renderElements()}
       </Section>
     )
   }

@@ -1,28 +1,28 @@
 import React, { Component } from 'react'
 
-export const nullThing = {
+export const nullElement = {
   author: {},
   tags: [],
 }
 
-const ThingContext = React.createContext({
-  thing: nullThing,
+const AppContext = React.createContext({
+  element: nullElement,
   reviews: [],
   error: null,
   setError: () => {},
   clearError: () => {},
   setTrack: () => {},
-  clearThing: () => {},
+  clearElement: () => {},
   setReviews: () => {},
   addReview: () => {},
 
 })
 
-export default ThingContext
+export default AppContext
 
-export class ThingProvider extends Component {
+export class ElementProvider extends Component {
   state = {
-    thing: nullThing,
+    element: nullElement,
     error: null,
   };
 
@@ -43,8 +43,8 @@ export class ThingProvider extends Component {
     this.setState({ reviews })
   }
 
-  clearThing = () => {
-    this.setThing(nullThing)
+  clearElement = () => {
+    this.setElement(nullElement)
     this.setReviews([])
   }
 
@@ -57,20 +57,20 @@ export class ThingProvider extends Component {
 
   render() {
     const value = {
-      thing: this.state.thing,
+      element: this.state.element,
       reviews: this.state.reviews,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setTrack: this.setTrack,
       setReviews: this.setReviews,
-      clearThing: this.clearThing,
+      clearElement: this.clearElement,
       addReview: this.addReview,
     }
     return (
-      <ThingContext.Provider value={value}>
+      <AppContext.Provider value={value}>
         {this.props.children}
-      </ThingContext.Provider>
+      </AppContext.Provider>
     )
   }
 }
