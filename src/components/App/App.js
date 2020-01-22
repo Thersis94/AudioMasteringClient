@@ -7,7 +7,7 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import "./App.css";
 import Upload from "../Upload/Upload";
 import Header from "../Header/Header";
-import userPage from "../userPage/userPage";
+import userPage from "../UserPage/UserPage";
 import InfoPage from "../InfoPage/InfoPage";
 import HomePage from "../HomePage/HomePage";
 

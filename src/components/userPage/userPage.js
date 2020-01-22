@@ -2,9 +2,8 @@ import React, { Component } from "../../../node_modules/react";
 import { Link } from "../../../node_modules/react-router-dom";
 import config from "../../config";
 import { Button } from "../Utils/Utils";
-import "./userPage.css";
+import "./UserPage.css";
 import TracksApiService from "../../services/tracks-api-service";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
 
 class userPage extends Component {
