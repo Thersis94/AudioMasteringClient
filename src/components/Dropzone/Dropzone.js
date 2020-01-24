@@ -77,11 +77,6 @@ class Dropzone extends Component {
           type="file"
           onChange={this.onFilesAdded}
         />
-        <img
-          alt="upload"
-          className="Icon"
-          src="baseline-cloud_upload-24px.svg"
-        />
         <p className="upload-instructions">
           Drag and drop or click for file explorer.
         </p>

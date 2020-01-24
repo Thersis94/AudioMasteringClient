@@ -60,6 +60,7 @@
   }
   
   .ProgressWrapper {
+    width: 90%;
     display: flex;
     flex: 1;
     flex-direction: row;
