@@ -110,8 +110,8 @@ class Upload extends Component {
     });
     try {
       await Promise.all(promises);
-
       this.setState({ successfullUploaded: true, uploading: false });
+
     } catch (e) {
       this.setState({ successfullUploaded: true, uploading: false });
     }
@@ -123,6 +123,13 @@ class Upload extends Component {
     this.setState(prevState => ({
       files: files
     }));
+  }
+
+  renderSuccessMessage() {
+    if(this.state.successfullUploaded) {
+      console.log('running')
+      return 'Your file was successfully uploaded and will waiting for you on your home page.'
+    }
   }
 
 
@@ -150,6 +157,9 @@ class Upload extends Component {
             />
           </div>
           <div className="Files">
+          <div className='success-message'>
+              {this.renderSuccessMessage()}
+            </div>
             {this.state.files.map(file => {
               return (
                 <div key={file.name} className="Row">
