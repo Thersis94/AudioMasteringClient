@@ -6,6 +6,34 @@
   
 }
 
+@keyframes bounce { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
+}
+
+.homepage-arrow-divider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.arrow {
+  bottom: 0;
+  left: 0;
+  min-width: 100px;
+  min-height: 100px;
+  height: 10vw;
+  width: 10vw;
+  margin: 3vw;
+  animation: bounce 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.no-arrow {
+  opacity: 0;
+}
+
 .Header a {
   color: white;
   text-decoration: none;

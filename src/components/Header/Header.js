@@ -34,21 +34,34 @@ export default class Header extends Component {
 
   renderBackgroundImg() {
     if (window.location.href === "https://aiaudio.now.sh/home") {
-      //replace with hosing page url
+      //"https://aiaudio.now.sh/home"
       return "HomePage";
     }
     else return "Header";
+  }
+
+  renderScrollMessage() {
+    if (window.location.href === "https://aiaudio.now.sh/home") {
+      //"https://aiaudio.now.sh/home"
+      
+      return "arrow"
+      
+    }
+    else return "no-arrow";
   }
 
   render() {
     return (
       <>
         <nav className={`${this.renderBackgroundImg()}`}>
+          <div className='homepage-arrow-divider'>
           <h1>
             <Link className="PageName" to="/home">
               AI Audio
             </Link>
           </h1>
+          <img className={this.renderScrollMessage()} src="https://img.icons8.com/carbon-copy/100/000000/down--v1.png"/>
+          </div>
           <div className="login-register-buttons">
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
