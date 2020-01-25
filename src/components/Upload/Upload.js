@@ -127,7 +127,7 @@ class Upload extends Component {
 
   renderSuccessMessage() {
     if(this.state.successfullUploaded) {
-      return 'Your file was successfully uploaded and will waiting for you on your home page.'
+      return 'Your file was successfully uploaded! You may upload another file or return to the homepage to access your mastered files.'
     }
   }
 
