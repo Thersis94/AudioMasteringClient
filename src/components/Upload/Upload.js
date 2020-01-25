@@ -127,7 +127,6 @@ class Upload extends Component {
 
   renderSuccessMessage() {
     if(this.state.successfullUploaded) {
-      console.log('running')
       return 'Your file was successfully uploaded and will waiting for you on your home page.'
     }
   }

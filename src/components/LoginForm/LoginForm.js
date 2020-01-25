@@ -26,6 +26,7 @@ export default class LoginForm extends Component {
 
   handleSubmitJwtAuth = ev => {
     ev.preventDefault();
+    
     this.setState({ error: null });
     const { user_name, password } = ev.target;
 
@@ -46,6 +47,30 @@ export default class LoginForm extends Component {
       //Wrap in if statement to check if succesfully logged in
       window.localStorage.setItem('currentUser', user_name.value)
   };
+
+  demoUser = ev => {
+    ev.preventDefault();
+    this.setState({ error: null });
+    
+    let user_name = 'Demo'
+    let password = 'J1j@chcc.sys'
+
+    AuthApiService.postLogin({
+      user_name: user_name,
+      password: password
+    })
+      .then(res => {
+        user_name = "";
+        password = "";
+        TokenService.saveAuthToken(res.authToken);
+        this.props.onLoginSuccess();
+      })
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
+
+      window.localStorage.setItem('currentUser', user_name)
+  }
 
   render() {
     const { error } = this.state;
@@ -68,6 +93,7 @@ export default class LoginForm extends Component {
         </div>
         <Button className='button' type="submit">Login</Button>
       </form>
+      <Button className='button' onClick={this.demoUser}>Demo User</Button>
       </span>
     );
   }

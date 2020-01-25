@@ -33,21 +33,19 @@ export default class Header extends Component {
   }
 
   renderBackgroundImg() {
-    if (window.location.href === "https://aiaudio.now.sh/home") {
+    if (window.location.href === "http://localhost:3000/home") {
       //"https://aiaudio.now.sh/home"
       return "HomePage";
     }
     else return "Header";
   }
 
-  renderScrollMessage() {
-    if (window.location.href === "https://aiaudio.now.sh/home") {
-      //"https://aiaudio.now.sh/home"
-      
-      return "arrow"
-      
+  infoButtonStatus() {
+    if(window.location.href === "http://localhost:3000/home") {
+      return 'info'
     }
-    else return "no-arrow";
+    else
+      return 'info-hidden'
   }
 
   render() {
@@ -60,7 +58,7 @@ export default class Header extends Component {
               AI Audio
             </Link>
           </h1>
-          <img className={this.renderScrollMessage()} src="https://img.icons8.com/carbon-copy/100/000000/down--v1.png"/>
+          <Link className={`${this.infoButtonStatus()}`} to="/info" >Info</Link>
           </div>
           <div className="login-register-buttons">
             {TokenService.hasAuthToken()

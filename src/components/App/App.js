@@ -32,7 +32,7 @@ class App extends Component {
           )}
           <Switch>
             <PublicOnlyRoute exact path={"/info"} component={InfoPage} />
-            <PublicOnlyRoute exact path={"/home"} component={HomePage} />
+            {/* <PublicOnlyRoute exact path={"/home"} component={HomePage} /> */}
 
             <PublicOnlyRoute path={"/login"} component={LoginPage} />
             <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
