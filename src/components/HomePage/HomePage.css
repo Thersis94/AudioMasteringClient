@@ -9,6 +9,18 @@
     font-size: 1.2em;
 }
 
+.waveform-and-description {
+    display: flex;
+    flex-direction: column;
+    margin: 3vw;
+}
+
+.heatmap-and-description {
+    display: flex;
+    flex-direction: column;
+    margin: 3vw;
+}
+
 .attribution-list {
     display: flex;
     flex-direction: column;
@@ -18,4 +30,41 @@
 
 .attribution-text {
     color: white;
+}
+
+.waveform-img {
+    align-self: center;
+    width: 70%;
+}
+
+.heatmap-img {
+    align-self: center;
+    width: 70%;
+}
+
+@media screen and (min-width: 450px) {
+
+    .heatmap-and-description {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .waveform-and-description {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .heatmap-img {
+        height: 10vw;
+        width: auto;
+        margin: 0 6vw 0 6vw;
+    }
+
+    .waveform-img {
+        height: 10vw;
+        width: auto;
+        margin: 0 6vw 0 6vw;
+    }
+
+
 }

@@ -32,7 +32,7 @@ class App extends Component {
           )}
           <Switch>
             <PublicOnlyRoute exact path={"/info"} component={InfoPage} />
-            {/* <PublicOnlyRoute exact path={"/home"} component={HomePage} /> */}
+            <PublicOnlyRoute exact path={"/home"} component={HomePage} />
 
             <PublicOnlyRoute path={"/login"} component={LoginPage} />
             <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
@@ -42,7 +42,7 @@ class App extends Component {
           </Switch>
         </main>
         <div className='build-info'>
-          Dev Build 0.16
+          Dev Build 0.17
         </div>
       </div>
     );

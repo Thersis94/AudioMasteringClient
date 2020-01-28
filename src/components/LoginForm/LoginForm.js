@@ -93,7 +93,7 @@ export default class LoginForm extends Component {
         </div>
         <Button className='button' type="submit">Login</Button>
       </form>
-      <Button className='button' onClick={this.demoUser}>Demo User</Button>
+      {/* <Button className='button' onClick={this.demoUser}>Demo User</Button> */}
       </span>
     );
   }

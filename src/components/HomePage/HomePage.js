@@ -7,6 +7,18 @@ export default class HomePage extends Component {
       return (
         <span className="home-page-app-description">
           <h2 className="home-page-title">How does it work?</h2>
+          <section>
+          <div className="waveform-and-description">
+          <img
+            className="waveform-img"
+            src="https://image.freepik.com/free-vector/frequency-sound-wave-blue-color-black-background-illustration-about-music-visual-audio_72857-89.jpg"
+            alt="Demonstrating a heatmap."
+          />
+          <p className="mastering-explanation">
+            WAV files are a lossless audio format. We use Wav files for our AI mastering process to ensure that the quality of audio is not degraded from being converted back and forth to a lossy format like mp3.
+          </p>
+          </div>
+          <div className="heatmap-and-description">
           <img
             className="heatmap-img"
             src="https://raw.githubusercontent.com/Thersis94/AudioMasteringClient/master/Pictures/image_3KCWKFSBPZC55YAEK4TUGEW3JPZNOH7K.png"
@@ -19,7 +31,8 @@ export default class HomePage extends Component {
             Stereo polarization, and Limiting to match the heatmap of your song to
             the average heatmaps of thousands of hit songs.
           </p>
-          
+          </div>
+          </section>      
           <section>
             <h2 className='file-types-header'>Compatible File Types</h2>
             <span className="file-types-lists">

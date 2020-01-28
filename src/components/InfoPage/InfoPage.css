@@ -5,9 +5,9 @@
     flex-direction: column;
 }
 
-.heatmap-img {
-    align-self: center;
-    width: 90%;
+.img-and-description {
+    display: flex;
+    flex-direction: row;
 }
 
 .mastering-explanation {

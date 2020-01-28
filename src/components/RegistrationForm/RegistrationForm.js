@@ -7,10 +7,12 @@ export default class RegistrationForm extends Component {
     onRegistrationSuccess: () => {}
   };
 
+
   state = { error: null };
 
   handleSubmit = ev => {
     ev.preventDefault();
+
     const { user_name, password } = ev.target;
 
     this.setState({ error: null });
