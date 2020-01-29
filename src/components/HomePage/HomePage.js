@@ -15,7 +15,7 @@ export default class HomePage extends Component {
             alt="Demonstrating a heatmap."
           />
           <p className="mastering-explanation">
-            WAV files are a lossless audio format. We use Wav files for our AI mastering process to ensure that the quality of audio is not degraded from being converted back and forth to a lossy format like mp3.
+            WAV files are a lossless audio format. We use WAV files for our AI mastering process to ensure that the quality of audio is not degraded from being converted back and forth to a lossy format like mp3.
           </p>
           </div>
           <div className="heatmap-and-description">
@@ -28,8 +28,8 @@ export default class HomePage extends Component {
             When you upload a audio file a heatmap is created. The heatmap is a
             representation of all of the frequencies and their volume at any given
             point in the song. The AI then uses a combination of Equalization,
-            Stereo polarization, and Limiting to match the heatmap of your song to
-            the average heatmaps of thousands of hit songs.
+            Stereo Polarization, and Limiting to match the heatmap of your song to
+            the average heatmaps of thousands of industry standard songs.
           </p>
           </div>
           </section>      

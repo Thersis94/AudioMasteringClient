@@ -33,7 +33,7 @@ export default class Header extends Component {
   }
 
   renderBackgroundImg() {
-    if (window.location.href === "http://localhost:3000/home") {
+    if (window.location.href === "https://aiaudio.now.sh/home") {
       //"https://aiaudio.now.sh/home"
       return "HomePage";
     } else return "Header";
@@ -49,7 +49,7 @@ export default class Header extends Component {
   // }
 
   renderScrollMessage() {
-    if (window.location.href === "http://localhost:3000/home") {
+    if (window.location.href === "https://aiaudio.now.sh/home") {
       //"https://aiaudio.now.sh/home"
 
       return "arrow";

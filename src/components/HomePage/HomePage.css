@@ -42,7 +42,7 @@
     width: 70%;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 1200px) {
 
     .heatmap-and-description {
         display: flex;
@@ -55,12 +55,14 @@
     }
 
     .heatmap-img {
+        min-height: 200px;
         height: 10vw;
         width: auto;
         margin: 0 6vw 0 6vw;
     }
 
     .waveform-img {
+        min-height: 200px;
         height: 10vw;
         width: auto;
         margin: 0 6vw 0 6vw;
