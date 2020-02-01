@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.mission-header {
+    color: white;
+}
+
 .attribution-header {
     font-size: 1.2em;
 }
@@ -40,6 +44,28 @@
 .heatmap-img {
     align-self: center;
     width: 70%;
+}
+
+.home-page-title {
+    margin: 5vw 0 2vw 0;
+}
+
+.what-is-mastering-text {
+    color: white;
+    margin: 2vw 0 2vw 0;
+}
+
+.how-it-works-header {
+    color: white;
+    font-size: 1.8em;
+}
+
+.how-it-works-text {
+    color: white;
+}
+
+.mission-text {
+    color: white;
 }
 
 @media screen and (min-width: 1200px) {
