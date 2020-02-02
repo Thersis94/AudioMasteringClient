@@ -1,8 +1,8 @@
 .Dropzone {
     min-width: 200px;
     min-height: 200px;
-    height: 20vw;
-    width: 20vw;
+    height: 16vw;
+    width: 16vw;
     background-color: #fff;
     border: 2px dashed rgb(187, 186, 186);
     border-radius: 50%;
