@@ -51,7 +51,7 @@ class Upload extends Component {
           disabled={this.state.files.length < 0 || this.state.uploading}
           onClick={this.uploadFiles}
         >
-          Upload
+          Master
         </button>
       );
     }
@@ -132,7 +132,7 @@ class Upload extends Component {
 
   renderSuccessMessage() {
     if(this.state.successfullUploaded) {
-      return 'Your file was successfully uploaded! You may upload another file or return to the homepage to access your mastered files.'
+      return 'Your file was successfully uploaded and mastered! You may master another file or return to the homepage to access your mastered files.'
     }
   }
 
