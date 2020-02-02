@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## AI Audio Client
+## AI Audio
 
 Live Page: https://aiaudio.now.sh/home
 
