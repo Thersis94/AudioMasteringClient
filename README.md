@@ -11,7 +11,11 @@ Live Page: https://aiaudio.now.sh/home
 
 ## Screen Shots
 
-![Alt text](http://full/path/to/img.jpg "Optional title")
+![Alt text](https://raw.githubusercontent.com/Thersis94/AudioMasteringClient/master/Pictures/ReadmeScreenshots/LandingPage.PNG "LandingPage")
+
+![Alt text](https://raw.githubusercontent.com/Thersis94/AudioMasteringClient/master/Pictures/ReadmeScreenshots/HomePage.PNG "HomePage")
+
+![Alt text](https://raw.githubusercontent.com/Thersis94/AudioMasteringClient/master/Pictures/ReadmeScreenshots/MasteringPage.PNG "MasteringPage")
 
 
 ## Summary Section
