@@ -8,7 +8,6 @@ import "./App.css";
 import Upload from "../Upload/Upload";
 import Header from "../Header/Header";
 import userPage from "../UserPage/UserPage";
-import InfoPage from "../InfoPage/InfoPage";
 import HomePage from "../HomePage/HomePage";
 
 
@@ -31,7 +30,6 @@ class App extends Component {
             <p className="red">There was an error! Oh no!</p>
           )}
           <Switch>
-            <PublicOnlyRoute exact path={"/info"} component={InfoPage} />
             <PublicOnlyRoute exact path={"/home"} component={HomePage} />
 
             <PublicOnlyRoute path={"/login"} component={LoginPage} />

@@ -47,12 +47,33 @@
 }
 
 .home-page-title {
+    color: white;
     margin: 5vw 0 2vw 0;
+}
+
+.file-types-lists {
+    color: white;
+}
+
+.file-types-header {
+    color: white;
+}
+
+.attribution-header {
+    color: white;
+}
+
+.file-type-header {
+    color: white;
 }
 
 .what-is-mastering-text {
     color: white;
     margin: 2vw 0 2vw 0;
+}
+
+.mastering-explanation {
+    color: white;
 }
 
 .how-it-works-header {
