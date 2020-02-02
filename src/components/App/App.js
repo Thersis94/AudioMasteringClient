@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import { Switch } from 'react-router-dom';
-import PrivateRoute from '../Utils/PrivateRoute'
-import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
-import LoginPage from '../../routes/LoginPage/LoginPage'
-import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import { Switch } from "react-router-dom";
+import PrivateRoute from "../Utils/PrivateRoute";
+import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
+import LoginPage from "../../routes/LoginPage/LoginPage";
+import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
 import "./App.css";
 import Upload from "../Upload/Upload";
 import Header from "../Header/Header";
 import userPage from "../UserPage/UserPage";
 import HomePage from "../HomePage/HomePage";
-
 
 class App extends Component {
   state = { hasError: false };
@@ -39,9 +38,7 @@ class App extends Component {
             <PrivateRoute path={"/upload"} component={Upload} />
           </Switch>
         </main>
-        <div className='build-info'>
-          Dev Build 0.17
-        </div>
+        <div className="build-info">Dev Build 0.17</div>
       </div>
     );
   }

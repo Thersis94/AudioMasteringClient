@@ -4,7 +4,6 @@ import Progress from "../Progress/Progress";
 import "./Upload.css";
 import { Link } from "react-router-dom";
 import Config from "../../config";
-//import TracksApiService from "../../services/tracks-api-service";
 
 class Upload extends Component {
   constructor(props) {
@@ -101,8 +100,7 @@ class Upload extends Component {
   }
 
   async uploadFiles() {
-
-    if(this.state.files.length === 0) {
+    if (this.state.files.length === 0) {
       return;
     }
 
@@ -116,7 +114,6 @@ class Upload extends Component {
     try {
       await Promise.all(promises);
       this.setState({ successfullUploaded: true, uploading: false });
-
     } catch (e) {
       this.setState({ successfullUploaded: true, uploading: false });
     }
@@ -124,18 +121,17 @@ class Upload extends Component {
 
   onTargetAdded(files) {
     files[0].fileState = "Raw";
-    files = [files[0]]
+    files = [files[0]];
     this.setState(prevState => ({
       files: files
     }));
   }
 
   renderSuccessMessage() {
-    if(this.state.successfullUploaded) {
-      return 'Your file was successfully uploaded and mastered! You may master another file or return to the homepage to access your mastered files.'
+    if (this.state.successfullUploaded) {
+      return "Your file was successfully uploaded and mastered! You may master another file or return to the homepage to access your mastered files.";
     }
   }
-
 
   render() {
     return (
@@ -161,9 +157,7 @@ class Upload extends Component {
             />
           </div>
           <div className="Files">
-          <div className='success-message'>
-              {this.renderSuccessMessage()}
-            </div>
+            <div className="success-message">{this.renderSuccessMessage()}</div>
             {this.state.files.map(file => {
               return (
                 <div key={file.name} className="Row">

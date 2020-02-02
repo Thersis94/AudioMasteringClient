@@ -41,16 +41,13 @@ class Dropzone extends Component {
 
   onDrop(event) {
     event.preventDefault();
-    if(event.dataTransfer.files.length > 1) {
-      //set error to one file at a time
-    }
     if (this.props.disabled) return;
     const files = event.dataTransfer.files;
     if (this.props.onFilesAdded) {
       const array = this.fileListToArray(files);
       this.props.onFilesAdded(array);
     }
-    this.setState({ hightlight: false });      
+    this.setState({ hightlight: false });
   }
 
   fileListToArray(list) {

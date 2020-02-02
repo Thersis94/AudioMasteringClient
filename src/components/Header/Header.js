@@ -34,24 +34,13 @@ export default class Header extends Component {
 
   renderBackgroundImg() {
     if (window.location.href === "https://aiaudio.now.sh/home") {
-      //"https://aiaudio.now.sh/home"
+      //"https://aiaudio.now.sh/home" Host link for window comparison.
       return "HomePage";
     } else return "Header";
   }
 
-  //removed until a decision is made about the prefered method of rendering the app info
-  // infoButtonStatus() {
-  //   if(window.location.href === "http://localhost:3000/home") {
-  //     return 'info'
-  //   }
-  //   else
-  //     return 'info-hidden'
-  // }
-
   renderScrollMessage() {
     if (window.location.href === "https://aiaudio.now.sh/home") {
-      //"https://aiaudio.now.sh/home"
-
       return "arrow";
     } else return "no-arrow";
   }
@@ -70,17 +59,15 @@ export default class Header extends Component {
               <img
                 className={this.renderScrollMessage()}
                 src="https://img.icons8.com/carbon-copy/100/000000/down--v1.png"
-                alt='Arrow pointing down to learn more section.'
+                alt="Arrow pointing down to learn more section."
               />
             </div>
-            {/* <Link className={`${this.infoButtonStatus()}`} to="/info" >How does it work?</Link> */}
           </div>
           <div className="login-register-buttons">
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
               : this.renderLoginLink()}
           </div>
-          
         </nav>
       </>
     );

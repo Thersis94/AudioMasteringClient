@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Input } from "../Utils/Utils";
 import TokenService from "../../services/token-service";
 import AuthApiService from "../../services/auth-api-service";
-import "./LoginForm.css"
+import "./LoginForm.css";
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -26,7 +26,7 @@ export default class LoginForm extends Component {
 
   handleSubmitJwtAuth = ev => {
     ev.preventDefault();
-    
+
     this.setState({ error: null });
     const { user_name, password } = ev.target;
 
@@ -43,17 +43,15 @@ export default class LoginForm extends Component {
       .catch(res => {
         this.setState({ error: res.error });
       });
-
-      //Wrap in if statement to check if succesfully logged in
-      window.localStorage.setItem('currentUser', user_name.value)
+    window.localStorage.setItem("currentUser", user_name.value);
   };
 
   demoUser = ev => {
     ev.preventDefault();
     this.setState({ error: null });
-    
-    let user_name = 'Demo'
-    let password = 'J1j@chcc.sys'
+
+    let user_name = "Demo";
+    let password = "J1j@chcc.sys";
 
     AuthApiService.postLogin({
       user_name: user_name,
@@ -69,31 +67,35 @@ export default class LoginForm extends Component {
         this.setState({ error: res.error });
       });
 
-      window.localStorage.setItem('currentUser', user_name)
-  }
+    window.localStorage.setItem("currentUser", user_name);
+  };
 
   render() {
     const { error } = this.state;
     return (
-      <span className='login-registration' >
-      <form className="Login-Registration-Form" onSubmit={this.handleSubmitJwtAuth}>
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
-        <div className="user_name">
-          <label htmlFor="LoginForm__user_name">User name</label>
-          <Input required name="user_name" id="LoginForm__user_name"></Input>
-        </div>
-        <div className="password">
-          <label htmlFor="LoginForm__password">Password</label>
-          <Input
-            required
-            name="password"
-            type="password"
-            id="LoginForm__password"
-          ></Input>
-        </div>
-        <Button className='button' type="submit">Login</Button>
-      </form>
-      {/* <Button className='button' onClick={this.demoUser}>Demo User</Button> */}
+      <span className="login-registration">
+        <form
+          className="Login-Registration-Form"
+          onSubmit={this.handleSubmitJwtAuth}
+        >
+          <div role="alert">{error && <p className="red">{error}</p>}</div>
+          <div className="user_name">
+            <label htmlFor="LoginForm__user_name">User name</label>
+            <Input required name="user_name" id="LoginForm__user_name"></Input>
+          </div>
+          <div className="password">
+            <label htmlFor="LoginForm__password">Password</label>
+            <Input
+              required
+              name="password"
+              type="password"
+              id="LoginForm__password"
+            ></Input>
+          </div>
+          <Button className="button" type="submit">
+            Login
+          </Button>
+        </form>
       </span>
     );
   }

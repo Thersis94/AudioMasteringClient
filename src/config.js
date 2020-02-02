@@ -1,3 +1,3 @@
 export default {
-  API_ENDPOINT: 'https://masteringserver.ngrok.io/api'
-}
+  API_ENDPOINT: "https://masteringserver.ngrok.io/api"
+};

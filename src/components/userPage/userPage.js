@@ -4,7 +4,7 @@ import config from "../../config";
 import { Button } from "../Utils/Utils";
 import "./UserPage.css";
 import TracksApiService from "../../services/tracks-api-service";
-import Loader from 'react-loader-spinner'
+import Loader from "react-loader-spinner";
 
 class userPage extends Component {
   constructor() {
@@ -13,8 +13,8 @@ class userPage extends Component {
       tracks: [],
       downloading: false
     };
-    this.downloadTrack = this.downloadTrack.bind(this)
-    this.setDownloadingState = this.setDownloadingState.bind(this)
+    this.downloadTrack = this.downloadTrack.bind(this);
+    this.setDownloadingState = this.setDownloadingState.bind(this);
   }
 
   componentDidMount() {
@@ -42,13 +42,13 @@ class userPage extends Component {
       .then(res => {
         this.setState({
           downloading: true
-        })
+        });
         return res.blob();
       })
       .then(blob => {
         this.setState({
           downloading: false
-        })
+        });
         let url = window.URL.createObjectURL(blob);
         let a = document.createElement("a");
         a.href = url;
@@ -56,7 +56,7 @@ class userPage extends Component {
         a.click();
       })
       .catch(err => console.error(err));
-  };
+  }
 
   deleteTrack = ev => {
     const trackName = ev.target.value;
@@ -80,11 +80,9 @@ class userPage extends Component {
   };
 
   setDownloadingState() {
-    if(this.state.downloading) {
-      return'downloading'
-    }
-    else
-      return'not-downloading'
+    if (this.state.downloading) {
+      return "downloading";
+    } else return "not-downloading";
   }
 
   renderTracks() {
@@ -118,8 +116,11 @@ class userPage extends Component {
     return (
       <div className="user-page-wrap">
         <span className={`${this.setDownloadingState()}`}>
-        <Loader type="Audio" color="white" height={100} width={100} />
-        <h2 className='downloading-message'>Please wait while we get your file ready for you. This could take a minute so grab a cup of tea...</h2>
+          <Loader type="Audio" color="white" height={100} width={100} />
+          <h2 className="downloading-message">
+            Please wait while we get your file ready for you. This could take a
+            minute so grab a cup of tea...
+          </h2>
         </span>
         <Link
           to="/upload"
