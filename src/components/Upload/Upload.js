@@ -127,7 +127,7 @@ class Upload extends Component {
     }));
   }
 
-  renderSuccessMessage() {
+  renderMessage() {
     if (this.state.successfullUploaded) {
       return "Your file was successfully uploaded and mastered! You may master another file or return to the homepage to access your mastered files.";
     }
@@ -157,7 +157,7 @@ class Upload extends Component {
             />
           </div>
           <div className="Files">
-            <div className="success-message">{this.renderSuccessMessage()}</div>
+            <div className="success-message">{this.renderMessage()}</div>
             {this.state.files.map(file => {
               return (
                 <div key={file.name} className="Row">

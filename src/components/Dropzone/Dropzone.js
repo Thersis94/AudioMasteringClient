@@ -4,7 +4,10 @@ import "./Dropzone.css";
 class Dropzone extends Component {
   constructor(props) {
     super(props);
-    this.state = { hightlight: false };
+    this.state = { 
+      hightlight: false,
+      errorMessage: ''
+     };
     this.fileInputRef = React.createRef();
     this.openFileDialog = this.openFileDialog.bind(this);
     this.onFilesAdded = this.onFilesAdded.bind(this);
@@ -41,6 +44,14 @@ class Dropzone extends Component {
 
   onDrop(event) {
     event.preventDefault();
+    let file = event.dataTransfer.files[0].name
+    console.log(file.slice(file.length - 4))
+    if(file.slice(file.length - 4) != '.wav') {
+      this.setState({
+        errorMessage: '.wav files only.'
+      })
+      return;
+    }
     if (this.props.disabled) return;
     const files = event.dataTransfer.files;
     if (this.props.onFilesAdded) {
@@ -72,11 +83,15 @@ class Dropzone extends Component {
           ref={this.fileInputRef}
           className="FileInput"
           type="file"
+          accept='.wav'
           onChange={this.onFilesAdded}
         />
         <p className="upload-instructions">
           Drag and drop or click for file explorer.
         </p>
+        <div>
+          {this.state.errorMessage}
+        </div>
       </div>
     );
   }
