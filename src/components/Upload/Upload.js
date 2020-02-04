@@ -146,7 +146,7 @@ class Upload extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Downloadbale Demo Tracks
+            Downloadable Demo Tracks
           </a>
         </div>
         <div className="Content">

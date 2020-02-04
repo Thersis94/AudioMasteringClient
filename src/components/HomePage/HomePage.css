@@ -5,8 +5,13 @@
     text-align: center;
 }
 
+.info-section{
+    text-shadow: 1px 1px black;
+}
+
 .mission-header {
     color: white;
+    text-shadow: 2px 2px black;
 }
 
 .attribution-header {
@@ -47,6 +52,7 @@
 }
 
 .home-page-title {
+    text-shadow: 2px 2px black;
     color: white;
     margin: 5vw 0 2vw 0;
 }
@@ -60,14 +66,17 @@
 
 .file-types-header {
     color: white;
+    text-shadow: 2px 2px black;
 }
 
 .attribution-header {
     color: white;
+    text-shadow: 2px 2px black;
 }
 
 .file-type-header {
     color: white;
+    text-shadow: 2px 2px black;
 }
 
 .what-is-mastering-text {
@@ -80,6 +89,7 @@
 }
 
 .how-it-works-header {
+    text-shadow: 2px 2px black;
     color: white;
     font-size: 1.8em;
 }

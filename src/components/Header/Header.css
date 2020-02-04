@@ -11,6 +11,12 @@
   100% { transform: translateY(-50px); }
 }
 
+.scroll-prompt {
+  color: white;
+  margin: 1vw;
+  font-size: .8em;
+}
+
 .homepage-arrow-divider {
   display: flex;
   flex-direction: column;

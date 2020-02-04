@@ -4,7 +4,7 @@ import "./HomePage.css";
 export default class HomePage extends Component {
   render() {
     return (
-      <span className="home-page-app-description">
+      <span className="info-section">
         <section>
           <h2 className="mission-header">Our Mission</h2>
           <p className="mission-text">

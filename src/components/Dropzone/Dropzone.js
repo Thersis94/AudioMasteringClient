@@ -46,7 +46,7 @@ class Dropzone extends Component {
     event.preventDefault();
     let file = event.dataTransfer.files[0].name
     console.log(file.slice(file.length - 4))
-    if(file.slice(file.length - 4) != '.wav') {
+    if(file.slice(file.length - 4) !== '.wav') {
       this.setState({
         errorMessage: '.wav files only.'
       })

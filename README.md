@@ -45,7 +45,7 @@ Scripts
     Start application for development: npm run dev
     Run tests: npm test
 
-Endpoints
+## Endpoints
 
 User Endpoints
 
@@ -62,14 +62,49 @@ Audio Endpoints
 Post /api/audio-master
 Requires user_name as header. Setup to recieve files as blobs.
 
+{
+    headers: {
+        user_name: 'EXAMPLE USERNAME'
+    }
+    file: {
+    fieldname: 'SONG',
+    originalname: 'SONG.wav',
+    destination: 'uploads/',
+    filename: '58f5951ccc35f88f3594172657d81f31',
+    path: 'uploads\\58f5951ccc35f88f3594172657d81f31',
+    size: 141628
+    }
+}
+
+
 Get /api/audio-master
 Requires user_name as header. Returns a list of persisted tracks for that user.
+
+{
+    headers: {
+        user_name: 'EXAMPLE USERNAME'
+    }
+}
 
 Return Download link /api/audio-master
 Requires user_name and track_name as headers.
 
+{
+    headers: {
+        user_name: 'EXAMPLE USERNAME',
+        track_name: 'EXAMPLE TRACKNAME'
+    }
+}
+
 Delete /api/audio-master
 Requires user_name and track_name as headers.
+
+{
+    headers: {
+        user_name: 'EXAMPLE USERNAME',
+        track_name: 'EXAMPLE TRACKNAME'
+    }
+}
 
 ## Screen Shots
 Landing Page
