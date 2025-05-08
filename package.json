@@ -19,7 +19,7 @@
     "react-dom": "^16.8.1",
     "react-fetch-progressbar": "^1.0.0",
     "react-loader-spinner": "^3.1.5",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^7.5.2",
     "react-scripts": "2.1.4"
   },
   "eslintConfig": {
